@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>俚语学习 - Millennial Lingo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+      <div class="nav-item active" onclick="showPage('challenge')">
+        <i class="fas fa-trophy"></i>
+        <span>挑战</span>
+      </div>
+      <div class="nav-item" onclick="showPage('learn')">
+        <i class="fas fa-book"></i>
+        <span>学习</span>
+      </div>
+      <div class="nav-item" onclick="showPage('explore')">
+        <i class="fas fa-compass"></i>
+        <span>探索</span>
+      </div>
+      <div class="nav-item" onclick="showPage('profile')">
+        <i class="fas fa-user"></i>
+        <span>我</span>
+      </div>
+    </nav>
+
+    <!-- 挑战页面 -->
+    <div id="challenge-page" class="page active">
+      <div class="status-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+
+      <div class="header">
+        <h1>每日挑战</h1>
+        <div class="help-icon"><i class="fas fa-question-circle"></i></div>
+      </div>
+
+      <div class="user-streak">
+        <div class="avatar-container">
+          <img src="https://placekitten.com/100/100" alt="用户头像" class="avatar">
+          <div class="avatar-frame"></div>
+        </div>
+        <div class="streak-info">
+          <h3>Lily</h3>
+          <p>已连续获胜10天</p>
+        </div>
+        <div class="share-icon">
+          <i class="fas fa-share-alt"></i>
+        </div>
+      </div>
+
+      <div class="leaderboard-banner">
+        <div class="trophy-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h3>排行榜</h3>
+        <div class="view-more">
+          查看排行榜 <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <div class="game-stats">
+        <div class="stat-card">
+          <div class="stat-avatar">
+            <img src="https://placekitten.com/80/80" alt="青蛙头像">
+          </div>
+          <h3>健康值</h3>
+          <div class="health-bar">
+            <div class="health-fill"></div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-avatar">
+            <img src="https://placekitten.com/81/81" alt="仓鼠头像">
+          </div>
+          <h3>奖励攻击</h3>
+          <button class="use-item-btn">使用道具</button>
+        </div>
+      </div>
+
+      <div class="challenge-section">
+        <h2>第一部分</h2>
+        <p>多项选择题</p>
+      </div>
+
+      <div class="level-grid">
+        <div class="level-item active">
+          <div class="level-label">第一关</div>
+          <div class="level-button">
+            <i class="fas fa-swords"></i>
+          </div>
+        </div>
+        <div class="level-item active">
+          <div class="level-label">第二关</div>
+          <div class="level-button">
+            <i class="fas fa-swords"></i>
+          </div>
+        </div>
+        <div class="level-item active">
+          <div class="level-label">第三关</div>
+          <div class="level-button">
+            <i class="fas fa-swords"></i>
+          </div>
+        </div>
+        <div class="level-item locked">
+          <div class="level-label">第四关</div>
+          <div class="level-button">
+            <i class="fas fa-lock"></i>
+          </div>
+        </div>
+        <div class="level-item locked">
+          <div class="level-label">第五关</div>
+          <div class="level-button">
+            <i class="fas fa-lock"></i>
+          </div>
+        </div>
+        <div class="level-item locked">
+          <div class="level-label">第六关</div>
+          <div class="level-button">
+            <i class="fas fa-lock"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 个人资料页面 -->
+    <div id="profile-page" class="page">
+      <div class="status-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+
+      <div class="profile-header">
+        <div class="settings-icon">
+          <i class="fas fa-cog"></i>
+        </div>
+        <div class="share-icon">
+          <i class="fas fa-share-alt"></i>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <div class="avatar-container large">
+          <img src="https://placekitten.com/100/100" alt="用户头像" class="avatar">
+          <div class="avatar-frame"></div>
+        </div>
+        <button class="change-avatar-btn">更换头像</button>
+
+        <div class="user-info-banner">
+          <div class="trophy-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Lily</h3>
+          <div class="rank-info">
+            排名 1000+ <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h2>10</h2>
+            <p>连胜天数</p>
+          </div>
+          <div class="stat-item">
+            <h2>5</h2>
+            <p>关注</p>
+          </div>
+          <div class="stat-item">
+            <h2>3</h2>
+            <p>粉丝</p>
+          </div>
+          <div class="stat-item">
+            <h2>10</h2>
+            <p>点赞&收藏</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-menu">
+        <div class="menu-item">
+          <i class="fas fa-book"></i>
+          <span>学习</span>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <i class="fas fa-box"></i>
+          <span>物品栏</span>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <i class="fas fa-file-alt"></i>
+          <span>帖子</span>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <i class="fas fa-heart"></i>
+          <span>点赞</span>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <i class="fas fa-folder"></i>
+          <span>收藏</span>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <i class="fas fa-history"></i>
+          <span>历史</span>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <i class="fas fa-language"></i>
+          <span>语言</span>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <i class="fas fa-medal"></i>
+          <span>成就</span>
+          <div class="view-all">查看全部</div>
+        </div>
+      </div>
+
+      <div class="achievements-section">
+        <div class="achievement-item">
+          <div class="achievement-badge beginner"></div>
+          <p>10天</p>
+          <h4>初学者</h4>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-badge novice"></div>
+          <p>20天</p>
+          <h4>新手</h4>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-badge intermediate"></div>
+          <p>30天</p>
+          <h4>中级</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学习页面 -->
+    <div id="learn-page" class="page">
+      <div class="status-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+
+      <div class="back-button">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+
+      <div class="slang-card">
+        <div class="slang-header">
+          <h2>Lit</h2>
+          <div class="tags">
+            <span>#现代俚语</span>
+            <span>#网络用语</span>
+            <span>#青年文化</span>
+          </div>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="source-info">
+          <span>来源：</span>
+          <span class="source-book">"青年俚语手册"</span>
+          <span class="source-chapter">"千禧一代语言"</span>
+        </div>
+
+        <div class="action-buttons">
+          <button class="collection-btn">点击添加到收藏簿</button>
+          <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+        </div>
+
+        <div class="definition-section">
+          <h3>定义与解释：</h3>
+          <p><strong>Lit</strong> (形容词): 描述令人兴奋、出色或愉快的事物。常用于表达某事物非常好或生动。</p>
+          
+          <h4>使用示例：</h4>
+          <ul>
+            <li>"这个派对太lit了！"</li>
+            <li>"你的新鞋子真是lit！"</li>
+          </ul>
+
+          <h4>使用场景：</h4>
+          <p>常见于年轻一代，特别是在社交媒体或网络平台上。常用于描述令人印象深刻或有趣的事件、情况或物品。</p>
+        </div>
+
+        <div class="synonyms-section">
+          <h3>同义词与反义词：</h3>
+          <p><strong>同义词：</strong> 棒极了、酷、刺激、奇妙</p>
+          <p><strong>反义词：</strong> 无聊、平淡、无趣</p>
+
+          <h4>相关俚语：</h4>
+          <ul>
+            <li><strong>Dope:</strong> 另一个用于描述非常酷或很棒的俚语。</li>
+            <li><strong>Fire:</strong> 用于描述非常好或令人印象深刻的事物。</li>
+          </ul>
+        </div>
+
+        <div class="etymology-section">
+          <h3>词源与历史背景：</h3>
+          <p><strong>起源：</strong> "Lit"源自"light"的过去式，在20世纪作为非裔美国人白话英语(AAVE)中的术语，用于描述喝醉或嗑药的人。近年来，其含义已演变为描述任何令人兴奋、有趣或出色的事物。</p>
+        </div>
+
+        <div class="rating-section">
+          <p>为此定义评分</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+
+        <div class="comments-section">
+          <h3>用户评论：</h3>
+          <div class="comment">
+            <span class="username">momo:</span>
+            <span class="comment-text">"昨天在对话中使用了'lit'，大家立刻就明白了！"</span>
+          </div>
+          <div class="comment">
+            <span class="username">Reco:</span>
+            <span class="comment-text">"解释得很好，但希望有更多例子！"</span>
+          </div>
+          <div class="see-more">查看更多 <i class="fas fa-chevron-right"></i></div>
+        </div>
+
+        <div class="practice-section">
+          <div class="ai-assistant">
+            <img src="https://placekitten.com/50/50" alt="AI助手" class="assistant-avatar">
+            <div class="assistant-bubble">"你想练习在对话中使用'lit'吗？点击这里开始对话！"</div>
+          </div>
+          <button class="practice-btn">开始练习</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学习进度页面 -->
+    <div id="learning-progress-page" class="page">
+      <div class="status-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+
+      <div class="back-button">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+
+      <div class="learning-header">
+        <h3>当前学习：</h3>
+        <h2>千禧一代用语</h2>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-label">学习进度条</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 70%;"></div>
+        </div>
+        <div class="progress-stats">7/10</div>
+      </div>
+
+      <div class="word-card">
+        <h2>Lit<span>(形容词)</span></h2>
+        <div class="tags">
+          <span>#现代俚语</span>
+          <span>#网络用语</span>
+          <span>#青年文化</span>
+        </div>
+        <p class="word-definition">令人兴奋或出色的；用于描述非常好或令人愉快的事物。</p>
+
+        <div class="usage-section">
+          <h3>常见使用场景</h3>
+          
+          <div class="usage-context">
+            <h4>派对和社交活动：</h4>
+            <p>"Lit"常用于描述非常有趣和刺激的派对、聚会或其他社交活动。</p>
+            <ul>
+              <li>"昨晚的派对真是<strong>lit</strong>！"</li>
+              <li>"这场音乐会太<strong>lit</strong>了！"</li>
+            </ul>
+          </div>
+
+          <div class="grammar-section">
+            <h3>语法特点</h3>
+            <p><strong>词性：</strong> "Lit"用作形容词，可以修饰名词或作表语形容词。</p>
+            <ul>
+              <li><strong>修饰名词：</strong> "这个<strong>lit</strong>派对"</li>
+              <li><strong>表语形容词：</strong>"派对很<strong>lit</strong>"</li>
+            </ul>
+          </div>
+
+          <div class="cultural-section">
+            <h3>文化背景</h3>
+            <p>最初源自"light"的过去分词，这个术语在非裔美国人白话英语(AAVE)中演变为描述令人兴奋或有趣的事物。"Lit"最初指代某人喝醉或受到药物影响，但其含义已演变为广泛描述任何令人兴奋或非常愉快的事物。</p>
+          </div>
+        </div>
+
+        <button class="continue-btn">我已学会，继续</button>
+      </div>
+    </div>
+
+    <!-- 挑战题目页面 -->
+    <div id="quiz-page" class="page">
+      <div class="status-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+
+      <div class="back-button">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+
+      <div class="quiz-header">
+        <h2>第一部分：<span>多项选择题</span></h2>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-label">学习进度条</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 20%;"></div>
+        </div>
+        <div class="progress-stats">1/5</div>
+      </div>
+
+      <div class="level-banner">
+        <div class="level-label">第一关</div>
+      </div>
+
+      <div class="battle-section">
+        <div class="character-card player">
+          <div class="character-bubble">来打败我吧！</div>
+          <div class="character-avatar">
+            <img src="https://placekitten.com/80/80" alt="青蛙头像">
+          </div>
+          <div class="character-stats">
+            <h4>健康值</h4>
+            <div class="health-bar">
+              <div class="health-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="character-card opponent">
+          <div class="character-bubble">等着瞧吧！</div>
+          <div class="character-avatar">
+            <img src="https://placekitten.com/81/81" alt="仓鼠头像">
+          </div>
+          <div class="character-stats">
+            <h4>无增益</h4>
+            <button class="props-btn">使用道具</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-question">
+        <h3>哪个俚语术语表示"非常酷"或"棒极了"？</h3>
+        <div class="quiz-options">
+          <div class="option">
+            <input type="radio" id="option1" name="answer">
+            <label for="option1">Cringe</label>
+          </div>
+          <div class="option correct">
+            <input type="radio" id="option2" name="answer" checked>
+            <label for="option2">Lit</label>
+            <span class="correct-label">正确！</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="option3" name="answer">
+            <label for="option3">Basic</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="option4" name="answer">
+            <label for="option4">Sus</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-banner">
+        <div class="flag-icon"></div>
+        <span>太棒了！</span>
+      </div>
+
+      <div class="note-button">
+        <i class="far fa-star"></i>
+        <span>点击加入错题本</span>
+      </div>
+
+      <div class="attack-button">
+        <i class="fas fa-swords"></i>
+        <span>点击攻击</span>
+      </div>
+
+      <button class="next-level-btn">下一关</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
